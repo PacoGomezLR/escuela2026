@@ -15,7 +15,6 @@ async function PaginaGrupos() {
             <Suspense fallback={<p className='text-2xl text-blue-300'>Cargando...</p>}>
                 <Lista
                     promesaGrupos={promesaGrupos}
-                    promesaAsignaturas={promesaAsignaturas}
                 />
             </Suspense>
 
