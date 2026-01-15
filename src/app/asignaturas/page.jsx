@@ -1,0 +1,25 @@
+import ListaAsignaturas from '@/components/asignaturas/lista'
+import { obtenerAsignaturas } from '@/lib/data'
+import { Suspense } from 'react'
+
+
+function PaginaAsignaturas() {
+
+    const promesaAsignaturas = obtenerAsignaturas()  // Promesa, no usamos AWAIT
+
+    return (
+        <div>
+            <h1 className='text-4xl'>PaginaAsignaturas</h1>
+
+            <Suspense fallback={<p className='text-2xl text-blue-300'>Cargando...</p>}>
+                <ListaAsignaturas
+                    promesaAsignaturas={promesaAsignaturas}
+                />
+            </Suspense>
+        </div>
+    )
+}
+
+export default PaginaAsignaturas
+
+
